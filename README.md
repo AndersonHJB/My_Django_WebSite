@@ -58,3 +58,17 @@ python manage.py migrate
 python3 manage.py startapp blog
 ```
 
+### 8. 将 App 添加到 settings.py 里
+
+```python
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+	'blog',
+]
+```
+
