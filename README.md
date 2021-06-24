@@ -103,3 +103,37 @@ v. 按特定路线发送，为……规定路线
 """
 ```
 
+### 11. 配置项目的 urls.py
+
+```python
+(review_djangoenv) ➜  review_Django git:(main) ✗ python manage.py createsuperuser
+Username (leave blank to use 'apple'): example_user
+Email address: example@aiyc.top
+Password: 
+Password (again): 
+This password is too short. It must contain at least 8 characters.
+This password is too common.
+This password is entirely numeric.
+Bypass password validation and create user anyway? [y/N]: y
+Superuser created successfully.
+(review_djangoenv) ➜  review_Django git:(main) ✗ 
+```
+
+- User：example_user
+- Password：123123
+- email：example@aiyc.top
+
+### 12. 设置访问 app 的 url
+
+```python
+from django.contrib import admin
+from django.urls import path, include # 添加一个 include
+
+urlpatterns = [
+    path('admin/', admin.site.urls), # 这个就是你在浏览器中输入的 url
+    path('blog/', include('blog.urls'), name='aiyc'),  # 地址结尾需要添加 /
+]
+```
+
+
+
